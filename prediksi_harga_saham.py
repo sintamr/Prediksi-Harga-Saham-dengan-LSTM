@@ -18,11 +18,9 @@ from keras.models import Sequential
 from keras.layers import LSTM, Dense
 
 df = yf.download('BBCA.JK', start='2018-01-01', end='2024-12-31')
-
 df
 
 df = df[['Close']]
-
 df.head()
 
 scaler = MinMaxScaler(feature_range=(0, 1))
@@ -66,7 +64,7 @@ plt.plot(dates, predicted, label='Prediksi Harga')
 plt.title('Prediksi Harga Saham BBCA')
 plt.xlabel('Time')
 plt.ylabel('Harga (IDR)')
-plt.xticks(rotation=0)  # Optional: miringkan label tanggal
+plt.xticks(rotation=0)
 plt.legend()
 plt.tight_layout()
 plt.show()
